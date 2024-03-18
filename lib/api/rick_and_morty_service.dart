@@ -10,6 +10,6 @@ class RickAndMortyService {
         await _dio.get('https://rickandmortyapi.com/api/character');
     final rickAndMortyCharactersModel = RickAndMortyCharacters(
         info: response.data.info, results: response.data.results);
-    return [];
+    return rickAndMortyCharactersModel.toCharactersEntity();
   }
 }

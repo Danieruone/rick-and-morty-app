@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:rick_and_morty_app/domain/entities/character_entity.dart';
+
 RickAndMortyCharacters rickAndMortyCharactersFromJson(String str) =>
     RickAndMortyCharacters.fromJson(json.decode(str));
 
@@ -26,6 +28,9 @@ class RickAndMortyCharacters {
         "info": info.toJson(),
         "results": List<dynamic>.from(results.map((x) => x.toJson())),
       };
+  List<CharacterEntity> toCharactersEntity() =>
+      List<CharacterEntity>.from(results.map((result) => CharacterEntity(
+          id: result.id, name: result.name, image: result.image)));
 }
 
 class Info {
