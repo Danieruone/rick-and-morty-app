@@ -8,8 +8,8 @@ class RickAndMortyService {
   Future<List<CharacterEntity>> getCharactersList() async {
     final response =
         await _dio.get('https://rickandmortyapi.com/api/character');
-    final rickAndMortyCharactersModel = RickAndMortyCharacters(
-        info: response.data.info, results: response.data.results);
+    final rickAndMortyCharactersModel =
+        RickAndMortyCharacters.fromJson(response.data);
     return rickAndMortyCharactersModel.toCharactersEntity();
   }
 }
