@@ -15,6 +15,7 @@ class _CardsScreenState extends State<CardsScreen> {
   @override
   void initState() {
     super.initState();
+    // TODO: Implement provider to do the request
     _callCharacters();
   }
 
