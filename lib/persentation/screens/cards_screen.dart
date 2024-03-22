@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:rick_and_morty_app/api/rick_and_morty_service.dart';
 import 'package:rick_and_morty_app/domain/entities/character_entity.dart';
