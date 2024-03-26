@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:rick_and_morty_app/api/rick_and_morty_service.dart';
 import 'package:rick_and_morty_app/domain/entities/character_entity.dart';
 
@@ -31,7 +32,11 @@ class _CardsScreenState extends State<CardsScreen> {
   @override
   Widget build(BuildContext context) {
     return loading
-        ? const Text("Loading...")
+        ? const Center(
+            child: SpinKitThreeBounce(
+            color: Colors.black,
+            size: 50.0,
+          ))
         : Padding(
             padding: const EdgeInsets.all(10),
             child: ListView.builder(
